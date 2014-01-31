@@ -10,6 +10,23 @@ setopt share_history        # share command history data
 setopt correct
 setopt auto_pushd
 
+# remove command lines from the history list when the first character on the
+# line is a space
+setopt histignorespace
+
+# display PID when suspending processes as well
+setopt longlistjobs
+
+# report the status of backgrounds jobs immediately
+setopt notify
+
+# whenever a command completion is attempted, make sure the entire command path
+# is hashed first.
+setopt hash_list_all
+
+# don't push the same dir twice.
+setopt pushd_ignore_dups
+
 bindkey -e
 
 if [[ "$TERM" != emacs ]]; then
@@ -29,7 +46,7 @@ if [[ "$TERM" != emacs ]]; then
     [[ -z "$terminfo[kcuf1]" ]] || bindkey -M viins "$terminfo[kcuf1]" vi-forward-char
     [[ -z "$terminfo[kcub1]" ]] || bindkey -M viins "$terminfo[kcub1]" vi-backward-char
 
-    #terminfo‚ª‚ ‚Ä‚É‚È‚ç‚È‚¢—p‚Éè“®’Ç‰Á
+    #terminfoãŒã‚ã¦ã«ãªã‚‰ãªã„ç”¨ã«æ‰‹å‹•è¿½åŠ 
     #delete
     bindkey -M vicmd "[3~" vi-delete-char
     bindkey -M emacs "[3~" delete-char
