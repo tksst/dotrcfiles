@@ -80,13 +80,13 @@ local p_date="[%F{cyan}%D{%m/%d %T}%f]"
 local p_tty="[%F{green}%l%f]"
 local p_rv="%(?,,[%B%F{red}%?%f%b])"
 local p_cdir="%B%F{blue}[%~]%f%b"
-local p_info="%n@%m"
+local p_info="%F{yellow}%n@%m%f"
 local p_mark="%(!,#,$)"
 if iscygwin;then
     for g in $(id -G); do
         [ $g -eq 0 ] && p_mark="#"
     done
 fi
-PROMPT="$p_date$p_tty$p_rv$p_cdir"$'\n'"$p_info $p_mark "
+PROMPT="$p_date$p_tty$p_rv$p_cdir"$'\n'"$p_info$p_mark "
 
 alias ls="ls --color=auto"
