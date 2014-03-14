@@ -90,3 +90,22 @@ fi
 PROMPT="$p_date$p_tty$p_rv$p_cdir"$'\n'"$p_info$p_mark "
 
 alias ls="ls --color=auto"
+
+case "${TERM}" in
+kterm*|xterm*|putty)
+    precmd() {
+        echo -n "\e]0;${USER}@${HOST%%.*}:${PWD}\007"
+    }
+    ;;
+
+screen)
+    precmd() {
+        echo -n "\e]0;${USER}@${HOST%%.*}:${PWD}\007"
+        echo -n "\ek$(basename $(pwd))/\e\\"
+    }
+    preexec() {
+        echo -n "\ek${1%% *}\e\\"
+    }
+    ;;
+esac
+
