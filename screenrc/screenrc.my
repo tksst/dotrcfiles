@@ -1,0 +1,19 @@
+# このscreenrcをOS付属のscreenrcからsourceで読み込むと良いと思います。
+
+defscrollback 20000
+startup_message off
+#    %{= kY} 文字のスタイルを明るい文字、背景黒とする
+#    %h hardstatus
+#    %{-} 文字のスタイルを元に戻す
+#    %-w 表示しているウィンドウより前のウィンドウ番号とウィンドウ名
+#    %10L> ここを左から10%くらいに配置
+#    %{=b bw} 文字のスタイルの変更
+#    %n %t 表示しているウィンドウのウィンドウ番号 (%n) とウィンドウ名 (%t)
+#    %{-} 文字のスタイルを元に戻す
+#    %+w 表示しているウィンドウより後のウィンドウ番号とウィンドウ名
+caption always "%{= kY}%h%{-}%-w%10L>%{=b bw}%n %t%{-}%+w"
+#    %H ホスト名
+hardstatus lastline "%H%=%Y/%m/%d %02c"
+
+# do not resize our window http://kaworu.jpn.org/kaworu/2008-03-06-1.php
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
