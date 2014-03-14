@@ -1,3 +1,5 @@
+# このzshrcをOS付属のzshrcからsourceで読み込むと良いと思います。
+
 iscygwin(){
     [[ $OSTYPE == cygwin ]] && return 0
         return 1
@@ -89,8 +91,6 @@ if iscygwin;then
 fi
 PROMPT="$p_date$p_tty$p_rv$p_cdir"$'\n'"$p_info$p_mark "
 
-alias ls="ls --color=auto"
-
 case "${TERM}" in
 kterm*|xterm*|putty)
     precmd() {
@@ -109,3 +109,7 @@ screen)
     ;;
 esac
 
+
+if iscygwin;then
+    alias ls="ls --color=auto"
+fi
