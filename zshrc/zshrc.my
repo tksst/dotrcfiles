@@ -55,25 +55,25 @@ if [[ "$TERM" != emacs ]]; then
 
     #terminfoがあてにならない用に手動追加
     #delete
-    bindkey -M vicmd "[3~" vi-delete-char
-    bindkey -M emacs "[3~" delete-char
+    bindkey -M vicmd "\e[3~" vi-delete-char
+    bindkey -M emacs "\e[3~" delete-char
     #home
-    bindkey -M emacs "[1~" beginning-of-line
-    bindkey -M emacs "[H"  beginning-of-line
+    bindkey -M emacs "\e[1~" beginning-of-line
+    bindkey -M emacs "\e[H"  beginning-of-line
     #end
-    bindkey -M emacs "[4~" end-of-line
-    bindkey -M emacs "[F"  end-of-line
+    bindkey -M emacs "\e[4~" end-of-line
+    bindkey -M emacs "\e[F"  end-of-line
     #pageup
-    bindkey -M emacs "[5~" beginning-of-buffer-or-history
+    bindkey -M emacs "\e[5~" beginning-of-buffer-or-history
     #pagedown
-    bindkey -M emacs "[6~" end-of-buffer-or-history
+    bindkey -M emacs "\e[6~" end-of-buffer-or-history
     #up
-    bindkey -M emacs "[A"  up-line-or-history
+    bindkey -M emacs "\e[A"  up-line-or-history
     #down
-    bindkey -M emacs "[B"  down-line-or-history
+    bindkey -M emacs "\e[B"  down-line-or-history
     #ins
-    bindkey -M emacs "[2~" overwrite-mode
-    bindkey -M vicmd "[2~" overwrite-mode
+    bindkey -M emacs "\e[2~" overwrite-mode
+    bindkey -M vicmd "\e[2~" overwrite-mode
 
 fi
 
