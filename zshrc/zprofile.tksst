@@ -1,0 +1,2 @@
+# screenがインストールされている場合、起動済みscreen一覧を表示
+which screen >/dev/null 2>/dev/null && screen -ls
