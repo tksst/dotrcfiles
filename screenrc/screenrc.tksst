@@ -15,5 +15,9 @@ caption always "%{= kY}%h%{-}%-w%10L>%{=b bw}%n %t%{-}%+w"
 #    %H ホスト名
 hardstatus lastline "%H%=%Y/%m/%d %02c"
 
+term screen-256color
+
 # do not resize our window http://kaworu.jpn.org/kaworu/2008-03-06-1.php
+# PuTTYの設定であらかじめターミナルを"putty"や"putty-256color"に設定していれば
+# 不要と思われるが、とりあえず残しておく…。
 termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
